@@ -7,6 +7,8 @@ Dark green: #28b485
 
 */
 
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -53,7 +55,6 @@ body {
   left: 50%;
   text-align: center;
 
-  /* elementi merkeze sabitlemenin pratik yolu */
   transform: translate(-50%, -50%);
 }
 
@@ -61,7 +62,6 @@ body {
   color: #fff;
   text-transform: uppercase;
 
-  /* animasyon titrekliğini gidermek için */
   backface-visibility: hidden;
   margin-bottom: 60px;
 }
@@ -72,15 +72,9 @@ body {
   font-weight: 400;
   letter-spacing: 35px;
 
-  /* eslem duration 5s istedi */
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-
-  /* 
-  animation-iteration-count: 3;
-  animation-delay: 3s; 
-  */
 }
 
 .heading-primary-sub {
@@ -90,10 +84,7 @@ body {
   letter-spacing: 17.4px;
 
   animation: moveInRight 1s ease-out;
-  /* eslem duration 5s istedi */
 }
-
-/* NOTE: transform alanına rotate() eklenerek daha farklı animasyonlar oluşturulabilir */
 
 @keyframes moveInLeft {
   0% {
@@ -138,7 +129,7 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 30px;
-  /*NOTE: inline-block özelliği elementi text gibi algılar ve diğer elementin üzerine çıkmasına izin vermez. ayrıca  .text-box alanında text-align: center özelliğinin uygulanmasını da sağlamış olduk */
+
   display: inline-block;
   border-radius: 100px;
   transition: all 0.2s;
@@ -167,7 +158,6 @@ body {
   width: 100%;
   border-radius: 100px;
 
-  /* NOTE: referans olarak .btn elementini verdik dikkat et */
   position: absolute;
   top: 0;
   left: 0;
@@ -184,10 +174,76 @@ body {
   opacity: 0;
 }
 
-/* NOTE: sadece bu butonda uygulanması için ayrıca class ekledik, bu nedenle .btn:link,
-.btn:visited alanında düzenleme yapmadık. Eğer ayrıca class atamak istemeseydik bu alanda düzenleme yapardık. */
 .btn-animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
-  /* NOTE:  Animasyon gerçekleimeden önce butonu görünmez yaptı.*/
+}
+
+/* Panels */
+.container {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.panel-border {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 576px) {
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+
+  .heading-primary-main {
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 20px;
+  }
+
+  .heading-primary-sub {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+  }
 }
