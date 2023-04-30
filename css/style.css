@@ -229,43 +229,6 @@ body {
   transition: opacity 0.3s ease-in 0.4s;
 }
 
-@media (max-width: 576px) {
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
-  }
-
-  .heading-primary-main {
-    display: block;
-    font-size: 40px;
-    font-weight: 400;
-    letter-spacing: 20px;
-  }
-
-  .heading-primary-sub {
-    display: block;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 17.4px;
-  }
-
-  footer {
-    text-align: center;
-  }
-
-  footer h3 {
-    margin-top: 40px;
-  }
-
-  .social-links li {
-    margin-right: 10px;
-  }
-
-  .footer-bottom:before {
-    opacity: 1;
-  }
-}
-
 /* MENU */
 .menu-wrap {
   position: fixed;
@@ -325,7 +288,7 @@ body {
 }
 
 /* Çizgiler aşağı iner */
-.menu-wrap .hamburger > div:after {
+.menu-wrap .hamburger div:after {
   top: 10px;
 }
 
@@ -335,14 +298,14 @@ body {
 }
 
 /* Çizgileri çarpı işaretine çevir */
-.menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after {
+.menu-wrap .toggler:checked + .hamburger div:before,
+.menu-wrap .toggler:checked + .hamburger div:after {
   top: 0;
   transform: rotate(90deg);
 }
 
 /* Seçili iken yönünü değiştir */
-.menu-wrap .toggler:checked:hover + .hamburger > div {
+.menu-wrap .toggler:checked:hover + .hamburger div {
   transform: rotate(225deg);
 }
 
@@ -464,16 +427,15 @@ footer p {
 
 footer ul {
   list-style: none;
-  padding-left: 0;
 }
 
-footer ul li a {
+footer a {
   color: inherit;
   position: relative;
   text-decoration: none;
 }
 
-footer ul li a:before {
+footer a:before {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -484,7 +446,7 @@ footer ul li a:before {
   transition: all 0.3s ease-in-out;
 }
 
-footer ul li a:hover:before {
+footer a:hover:before {
   width: 100%;
 }
 
@@ -519,6 +481,16 @@ footer ul li a:hover:before {
   width: 100%;
 }
 
+.contact i {
+  margin-right: 10px;
+}
+
+.news ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* Footer Bottom */
 .footer-bottom {
   background: linear-gradient(to right, #636c77, #26303d);
@@ -535,4 +507,39 @@ footer ul li a:hover:before {
 
 .footer-bottom p {
   margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+
+  .heading-primary-main {
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 20px;
+  }
+
+  .heading-primary-sub {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+  }
+
+  footer {
+    height: auto;
+  }
+
+  footer .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 50px;
+  }
 }
