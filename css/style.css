@@ -4,7 +4,8 @@ COLORS:
 Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
-
+Gray: #95A3B3
+Dark gray: #777
 */
 
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
@@ -13,6 +14,7 @@ Dark green: #28b485
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -246,6 +248,22 @@ body {
     font-weight: 700;
     letter-spacing: 17.4px;
   }
+
+  footer {
+    text-align: center;
+  }
+
+  footer h3 {
+    margin-top: 40px;
+  }
+
+  .social-links li {
+    margin-right: 10px;
+  }
+
+  .footer-bottom:before {
+    opacity: 1;
+  }
 }
 
 /* MENU */
@@ -401,4 +419,120 @@ body {
   background-color: #fff;
   transition: color 0.4s ease;
   border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  height: 45vh;
+  background: linear-gradient(to top, #636c77a6, #7ed56f56);
+  color: #3f3f3f;
+  padding: 60px 0;
+  position: relative;
+  border-radius: 30px 30px 0 0;
+}
+
+footer .row {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+footer h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+footer h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 60px;
+  background-color: #fff;
+}
+
+footer p,
+footer ul {
+  margin-bottom: 20px;
+}
+
+footer p {
+  line-height: 1.5;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer ul li a {
+  color: inherit;
+  position: relative;
+  text-decoration: none;
+}
+
+footer ul li a:before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+footer ul li a:hover:before {
+  width: 100%;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.social-links li:last {
+  margin-right: 0;
+}
+
+.social-links a {
+  display: block;
+  font-size: 24px;
+  color: inherit;
+  position: relative;
+}
+
+.social-links a:before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-links a:hover:before {
+  width: 100%;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: linear-gradient(to right, #636c77, #26303d);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  opacity: 0.4;
+
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.footer-bottom p {
+  margin-bottom: 0;
 }
